@@ -52,3 +52,20 @@ function calculateFinalScore(obj) {
 
           return false;
 }
+
+
+function  waitingTime(waitingTimes  , serialNumber) {
+          if(Array.isArray(waitingTimes) === false || typeof(serialNumber) !== 'number') {
+            return "Invalid Input";
+          }
+
+          let sum = 0;
+          for(const waitingTime of waitingTimes) {
+            sum += waitingTime;
+          }
+
+          const avgWaitingTime = Math.round(sum / waitingTimes.length);
+          const candidateRemaining = (serialNumber - 1) - waitingTimes.length;
+
+          return candidateRemaining * avgWaitingTime;
+}
