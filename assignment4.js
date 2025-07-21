@@ -31,3 +31,24 @@ function checkDigitsInName(name) {
           }
           return false;  
 }
+
+
+
+function calculateFinalScore(obj) {
+          if(typeof obj !== 'object' || Array.isArray(obj) === true) {
+            return "Invalid Input";
+          }
+
+          if(obj.isFFamily === true) {
+            if(obj.testScore + obj.schoolGrade >= 60) {
+              return true;
+            }
+          }
+          else if(obj.isFFamily === false) {
+            if(obj.testScore + obj.schoolGrade >= 80) {
+              return true;
+            }
+          }
+
+          return false;
+}
