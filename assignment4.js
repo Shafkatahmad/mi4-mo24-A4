@@ -6,3 +6,17 @@ function calculateTax(income, expenses) {
           return (income - expenses) * .20;
 
 }
+
+
+
+function sendNotification(email) {
+          if(email.includes('@') === false) {
+            return "Invalid Email";
+          }
+
+          const names = email.split("@");
+          return names[0] + ' sent you an email from ' + names[1];
+}
+
+
+
